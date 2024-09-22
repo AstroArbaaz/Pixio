@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model Image {
+//   id       String   @id @default(cuid())
+//   url      String
+//   metadata Json
+//   comments Comment[]
+//   createdAt DateTime @default(now())
+// }
+
+// model Comment {
+//   id       String   @id @default(cuid())
+//   text     String
+//   image    Image    @relation(fields: [id], references: [id])
+// }
+
+model Image {
+  id        Int       @id @default(autoincrement())
+  filename  String
+  s3Key     String
+  mimeType  String
+  status    String    @default("PENDING")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  comments  Comment[]
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  imageId   Int
+  userId    Int
+  image     Image    @relation(fields: [imageId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  name     String
+  comments Comment[]
+}
