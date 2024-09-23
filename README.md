@@ -30,6 +30,8 @@ Before you begin, ensure you have the following installed:
    AWS_REGION=your_aws_region
    S3_BUCKET_NAME=your_s3_bucket_name
    SES_EMAIL_FROM=your_verified_email@example.com
+   SES_EMAIL_SOURCE="your-verified-email@example.com"
+   ADMIN_EMAILS="admin1@example.com,admin2@example.com"
    DATABASE_USER="user"
    DATABASE_PASSWORD="testing"
    DATABASE_NAME="postgres"
