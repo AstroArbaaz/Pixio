@@ -24,17 +24,16 @@ Before you begin, ensure you have the following installed:
 
 2. Create a `.env` file in the root directory and add the following environment variables:
    ```
-   DATABASE_URL="postgresql://user:password@localhost:5433/dbname?schema=public"
-   AWS_ACCESS_KEY_ID=your_access_key
-   AWS_SECRET_ACCESS_KEY=your_secret_key
-   AWS_REGION=your_aws_region
-   S3_BUCKET_NAME=your_s3_bucket_name
-   SES_EMAIL_FROM=your_verified_email@example.com
-   SES_EMAIL_SOURCE="your-verified-email@example.com"
-   ADMIN_EMAILS="admin1@example.com,admin2@example.com"
-   DATABASE_USER="user"
-   DATABASE_PASSWORD="testing"
-   DATABASE_NAME="postgres"
+    DATABASE_URL="postgresql://user:password@localhost:5433/dbname?schema=public"
+    AWS_REGION="us-east-1"
+    AWS_ACCESS_KEY_ID="your-access-key-id"
+    AWS_SECRET_ACCESS_KEY="your-secret-access-key"
+    S3_BUCKET_NAME="your-bucket-name"
+    SES_EMAIL_SOURCE="your-verified-email@example.com"
+    ADMIN_EMAILS="admin1@example.com,admin2@example.com"
+    DATABASE_USER="user"
+    DATABASE_PASSWORD="testing"
+    DATABASE_NAME="postgres"
    ```
 
 3. Install dependencies:
