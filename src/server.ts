@@ -33,6 +33,10 @@ app.use("/api/users", userRoutes);
 
 app.use(errorHandler);
 
+app.get("/healthcheck", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

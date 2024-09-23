@@ -17,7 +17,7 @@ COPY . .
 COPY .env .
 
 # Prisma: Migrate Database
-# RUN npx prisma migrate dev
+RUN npx prisma migrate dev
 
 # Install TypeScript and build the application
 RUN npm run build
